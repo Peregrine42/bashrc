@@ -52,7 +52,7 @@ prompt_git_diff() {
 
 # Get repo info
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;91m\]\u\[\033[01;37m\] at \[\033[01;33m\]\h\[\033[01;37m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " \[\033[01;32m\][%s]")\[\033[00m $(prompt_git_diff) \]\n\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " \[\033[01;32m\][%s]")\[\033[00m $(prompt_git_diff) \]\nλ '
     PS2="> "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ '
@@ -123,6 +123,10 @@ extract () {
   fi
 }
 
+if [ -f ~/.dir_colors ]; then
+  eval `dircolors ~/.dir_colors`
+fi
+
 # Runs a ls immediately when you're inside a file. 
 cl() {
  if [ -d $1 ] ; then
@@ -135,3 +139,9 @@ cl() {
 
 alias gst="git status"
 alias gl="git log --oneline"
+alias rails="bundle exec rails"
+alias rspec="bundle exec rspec"
+alias cucumber="bundle exec cucumber"
+alias rubocop="bundle exec rubocop"
+alias cap="bundle exec cap"
+alias rake="bundle exec rake"
