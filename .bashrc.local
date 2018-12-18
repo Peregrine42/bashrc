@@ -145,3 +145,6 @@ alias cucumber="bundle exec cucumber"
 alias rubocop="bundle exec rubocop"
 alias cap="bundle exec cap"
 alias rake="bundle exec rake"
+
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
