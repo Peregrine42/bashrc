@@ -52,10 +52,10 @@ prompt_git_diff() {
 
 # Get repo info
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[00m\] $(git branch 2>/dev/null | grep '^*' | colrm 1 2)\[\033[00m $(prompt_git_diff) \]\nλ '
+    PS1='\u ${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[00m\] $(git branch 2>/dev/null | grep '^*' | colrm 1 2)\[\033[00m $(prompt_git_diff) \]\nλ '
     PS2="> "
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ '
+    PS1='\u ${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ '
 fi
 unset color_prompt force_color_prompt
 
