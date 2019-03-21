@@ -137,6 +137,12 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
+  
+  hyperTabsMove: {
+    moveLeft: ['ctrl+h'],
+    moveRight: ['ctrl+l']
+  },
+
   plugins: [
     'hypercwd',
     'hyper-electron-highlighter'
